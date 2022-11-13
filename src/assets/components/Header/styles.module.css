@@ -1,0 +1,22 @@
+header {
+    width: 100%;
+    background-color: #131313;
+    padding: 24px 0;
+}
+
+.header-container {
+    max-width: 1216px;
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin: 0 auto;
+}
+
+.header-socials {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}

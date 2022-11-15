@@ -33,8 +33,10 @@ export function Pokemons() {
             {pokemon.length > 0 && (
                 pokemon.map((pokemon, key) => (
                     <article key={key}>
-                        <p>{pokemon.data.name}</p>
                         <img src={pokemon.data.sprites.other["official-artwork"].front_default} alt="" />
+                        <p>{`#0${pokemon.data.id}`}</p>
+                        <p>{pokemon.data.name}</p>
+                        {pokemon.data.types.map(type => console.log(type))}
                     </article>
                 ))
             )}

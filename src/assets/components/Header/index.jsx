@@ -11,6 +11,11 @@ export function Header() {
                 <div className={styles["header-logo"]}>
                     <img src={logo} alt="Logo Pokemon" />
                 </div>
+
+                <div className={styles['header-search']}>
+                    <input type="text" name="" id="" className={styles['header-search__input']} placeholder="Pesquisar Pokémon"/>
+                </div>
+
                 <div className={styles["header-socials"]}>
                     <a href="https://www.linkedin.com/in/natanael-saymon-2b9b18145/" target="_blank">
                         <img src={linkedin} alt="Logo do LinkeDin" />

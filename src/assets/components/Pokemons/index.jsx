@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import axios from 'axios';
 
 import styles from './styles.module.css';
+import { Pokemon } from '../Pokemon';
 
 
 export function Pokemons() {
@@ -27,16 +28,18 @@ export function Pokemons() {
         getPokemons()
     }, [])
 
-
     return(
-        <div className={styles["container"]}>
+        <div className={styles["pokemons-container"]}>
             {pokemon.length > 0 && (
                 pokemon.map((pokemon, key) => (
-                    <article key={key}>
-                        <img src={pokemon.data.sprites.other["official-artwork"].front_default} alt="" />
-                        <p>{`#0${pokemon.data.id}`}</p>
-                        <p>{pokemon.data.name}</p>
-                        {pokemon.data.types.map(type => console.log(type))}
+                    <article key={key} className={styles["pokemons-article"]}>
+                        <Pokemon 
+                            key={key}
+                            id={pokemon.data.id}
+                            name={pokemon.data.name}
+                            img={pokemon.data.sprites.other["official-artwork"].front_default}
+                            types={pokemon.data.types}
+                        />
                     </article>
                 ))
             )}

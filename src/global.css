@@ -9,13 +9,21 @@ img {
     max-width: 100%;
 }
 
+a {
+    text-decoration: none;
+}
+
+ul li {
+    list-style: none;
+}
+
 body {
     -webkit-font-smoothing: antialiased;
-    background-color: #24293F;
+    background-color: #060B28;
 }
 
 body, input, textarea, button {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-weight: 400;
     font-size: 1rem;
 }

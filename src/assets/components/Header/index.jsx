@@ -1,8 +1,8 @@
-import styles from './styles.module.css'
+import styles from './styles.module.css';
 
-import logo from '../../images/svg/logo-pokemon.svg'
-import linkedin from '../../images/svg/logo-linkedin.svg'
-import github from '../../images/svg/logo-github.svg'
+import logo from '../../images/svg/logo-pokemon.svg';
+import linkedin from '../../images/svg/logo-linkedin.svg';
+import github from '../../images/svg/logo-github.svg';
 
 export function Header() {
     return(
@@ -10,10 +10,6 @@ export function Header() {
             <div className={styles['header-container']}>
                 <div className={styles["header-logo"]}>
                     <img src={logo} alt="Logo Pokemon" />
-                </div>
-
-                <div className={styles['header-search']}>
-                    <input type="text" name="" id="" className={styles['header-search__input']} placeholder="Pesquisar Pokémon"/>
                 </div>
 
                 <div className={styles["header-socials"]}>

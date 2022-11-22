@@ -48,24 +48,17 @@ export function Pokemons() {
         <div className={styles["pokemons-container"]}>
             {pokemon.length > 0 && (
                 pokemon.map((pokemon, key) => (
-                    <article key={key} className={styles["pokemons-article"]}>
-                        <div className={styles["overlay"]}></div>
-                        
-                        <Pokemon 
-                            key={key}
-                            id={pokemon.data.id}
-                            name={pokemon.data.name}
-                            img={pokemon.data.sprites.other["official-artwork"].front_default}
-                            types={pokemon.data.types}
-                            height={pokemon.data.height}
-                            weight={pokemon.data.weight}
-                        />
-
-                        <button>
-                            <SVGBolt /> 
-                            <span>Mais Detalhes</span>
-                        </button>
-                    </article>
+                    <a href='#' key={key}>
+                        <article className={styles["pokemons-article"]}>
+                            <Pokemon 
+                                key={key}
+                                id={pokemon.data.id}
+                                name={pokemon.data.name}
+                                img={pokemon.data.sprites.other["official-artwork"].front_default}
+                                types={pokemon.data.types}
+                            />
+                        </article>
+                    </a>
                 ))
             )}
         </div>

@@ -21,7 +21,7 @@ const SVGBolt = () => (
 
 
 
-export function Pokemons() {
+export function Pokemons({ valorDoFiltro }) {
 
     const [pokemon, setPokemon] = useState([])
     
@@ -47,19 +47,23 @@ export function Pokemons() {
     return(
         <div className={styles["pokemons-container"]}>
             {pokemon.length > 0 && (
-                pokemon.map((pokemon, key) => (
-                    <a href='#' key={key}>
-                        <article className={styles["pokemons-article"]}>
-                            <Pokemon 
-                                key={key}
-                                id={pokemon.data.id}
-                                name={pokemon.data.name}
-                                img={pokemon.data.sprites.other["official-artwork"].front_default}
-                                types={pokemon.data.types}
-                            />
-                        </article>
-                    </a>
-                ))
+                pokemon.filter((pokemon) => {
+                    return pokemon.data.name.includes(valorDoFiltro)
+                }).map((pokemon, key) => {
+                    return(
+                        <a href='#' key={key}>
+                            <article className={styles["pokemons-article"]}>
+                                <Pokemon 
+                                    key={key}
+                                    id={pokemon.data.id}
+                                    name={pokemon.data.name}
+                                    img={pokemon.data.sprites.other["official-artwork"].front_default}
+                                    types={pokemon.data.types}
+                                />
+                            </article>
+                        </a>
+                    )
+                })
             )}
         </div>
     )

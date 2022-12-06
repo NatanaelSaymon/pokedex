@@ -4,11 +4,13 @@ import { Search } from "./assets/components/Search"
 
 function App() {
 
+  const valorDoFiltro = 'mewtwo'
+
   return (
     <div className="App">
       <Header />
       <Search />
-      <Pokemons />
+      <Pokemons valorDoFiltro={valorDoFiltro}/>
     </div>
   )
 }

@@ -1,8 +1,13 @@
+import { useState } from 'react';
 import styles from './styles.module.css';
 
 import lupa from '../../images/svg/lupa.svg';
 
-export function Search() {
+export function Search({ valorDoFiltro, setValorDoFiltro }) {
+
+    const valorDaBusca = valorDoFiltro;
+    const setValorDaBusca = setValorDoFiltro;
+
     return(
 
         <section className={styles['search__container']}>
@@ -17,6 +22,8 @@ export function Search() {
                     name="" 
                     id="" 
                     placeholder="Pesquisar Pokémon"
+                    value={valorDaBusca}
+                    onChange={((e) => { setValorDaBusca(e.target.value) })}
                 />
                 
                 <button className={styles['search__btn']} type="button">

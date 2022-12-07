@@ -5,10 +5,10 @@
 Esse projeto será feito em ReactJs e servirá como base de aprendizado.
 <br><br>
 
-- tela inicial com listagem de pokemon (❌)
+- tela inicial com listagem de pokemon (✅)
 - tela busca de pokemon (❌)
-- tela de pokemon favoritos (❌)
 - tela de datalhes dos pokemons (❌)
+- tela de pokemon favoritos (❌)
 
 ## 🧰 Tecnologias e ferramentas utilizadas
 

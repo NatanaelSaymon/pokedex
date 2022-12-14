@@ -5,7 +5,7 @@ import { Search } from "./assets/components/Search";
 
 function App() {
 
-  const [valorDoFiltro, setValorDoFiltro] = useState("mewtwo")
+  const [valorDoFiltro, setValorDoFiltro] = useState("")
 
   return (
     <div className="App">

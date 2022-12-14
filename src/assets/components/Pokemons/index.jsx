@@ -4,7 +4,6 @@ import axios from 'axios';
 import styles from './styles.module.css';
 import { Pokemon } from '../Pokemon';
 
-
 export function Pokemons({ valorDoFiltro }) {
 
     const [pokemon, setPokemon] = useState([])
@@ -29,28 +28,30 @@ export function Pokemons({ valorDoFiltro }) {
     }, [])
 
     return(
-        <div className={styles["pokemons-container"]}>
-            {pokemon.length > 0 && (
-                pokemon.filter((pokemon) => {
-                    const nameNormalized = pokemon.data.name.toLowerCase();
-                    const valorDoFiltroNormalized = valorDoFiltro.toLowerCase();
-                    return nameNormalized.includes(valorDoFiltroNormalized);
-                }).map((pokemon, key) => {
-                    return(
-                        <a href='#' key={key}>
-                            <article className={styles["pokemons-article"]}>
+        <>
+            <div className={styles["pokemons-container"]}>
+                {pokemon.length > 0 && (
+                    pokemon.filter((pokemon) => {
+                        const nameNormalized = pokemon.data.name.toLowerCase();
+                        const valorDoFiltroNormalized = valorDoFiltro.toLowerCase();
+                        return nameNormalized.includes(valorDoFiltroNormalized);
+                    }).map((pokemon, key) => {
+                        return(
+                            <article className={styles["pokemons-article"]} key={key}>
                                 <Pokemon 
                                     key={key}
                                     id={pokemon.data.id}
                                     name={pokemon.data.name}
                                     img={pokemon.data.sprites.other["official-artwork"].front_default}
                                     types={pokemon.data.types}
+                                    stats={pokemon.data.stats}
+                                    abilities={pokemon.data.abilities}
                                 />
                             </article>
-                        </a>
-                    )
-                })
-            )}
-        </div>
+                        )
+                    })
+                )}
+            </div>
+        </>
     )
 }
